@@ -1,129 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us - GardenCare Co.</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: url('https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07') no-repeat center center fixed;
-      background-size: cover;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #dcedc8, #a5d6a7);
       color: #2e4600;
+      background-attachment: fixed;
     }
+
     header {
-      background-color: rgba(76, 175, 80, 0.95);
-      padding: 1rem 2rem;
-      color: white;
+      background: rgba(76, 175, 80, 0.95);
+      padding: 1.5rem 2rem;
+      color: #fff;
       text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      letter-spacing: 1px;
     }
+
     nav {
       text-align: center;
       margin: 1rem 0;
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      padding: 0.8rem;
+      border-radius: 10px;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     }
+
     .nav-button {
       display: inline-block;
       margin: 0 0.5rem;
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.2rem;
       background-color: #66bb6a;
       color: white;
-      border-radius: 6px;
+      border-radius: 8px;
       text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s;
+      font-weight: 600;
+      transition: 0.3s;
     }
+
     .nav-button:hover {
-      background-color: #4caf50;
+      background-color: #43a047;
+      box-shadow: 0 0 10px #81c784;
+      transform: scale(1.05);
     }
+
     .content {
-      max-width: 800px;
-      margin: 2rem auto;
-      background-color: rgba(255, 255, 255, 0.95);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      margin: 3rem auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      animation: fadeIn 1.5s ease-in-out;
     }
+
     h2 {
       color: #3b6f0b;
-      margin-top: 1.5rem;
+      border-bottom: 3px solid #81c784;
+      display: inline-block;
+      padding-bottom: 4px;
+      margin-top: 2rem;
     }
-    p {
+
+    p, ul {
       line-height: 1.6;
+      font-size: 1rem;
     }
+
     ul {
       padding-left: 1.5rem;
     }
+
+    li {
+      margin-bottom: 0.6rem;
+    }
+
     .button {
       display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.75rem 1.5rem;
+      margin-top: 2rem;
+      padding: 0.8rem 1.8rem;
       background-color: #4caf50;
       color: white;
       font-size: 1rem;
       border-radius: 8px;
       text-decoration: none;
-      transition: background-color 0.3s;
+      transition: 0.3s;
+      font-weight: 600;
     }
+
     .button:hover {
-      background-color: #3a8f3a;
+      background-color: #388e3c;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(72, 187, 120, 0.4);
     }
+
     footer {
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem;
       color: white;
-      background-color: rgba(76, 175, 80, 0.95);
-      margin-top: 2rem;
+      background-color: rgba(56, 142, 60, 0.95);
+      margin-top: 3rem;
+      box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Benefits Section */
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .benefit-box {
+      background: rgba(129, 199, 132, 0.15);
+      border: 2px solid #81c784;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .benefit-box:hover {
+      background: #a5d6a7;
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .benefit-box h3 {
+      color: #2e7d32;
+      margin-bottom: 0.5rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>About GardenCare Co.</h1>
+    <p>Growing Greener Homes, One Garden at a Time 🌿</p>
   </header>
 
   <nav>
     <a href="test.html" class="nav-button">Home</a>
-    <a href="services.html" class="nav-button">chart</a>
+    <a href="services.html" class="nav-button">Chart</a>
     <a href="contact.html" class="nav-button">Contact</a>
     <a href="requirements.html" class="nav-button">Job Requirements</a>
   </nav>
 
   <div class="content">
     <h2>Company Profile</h2>
-    <p>GardenCare Co. is a student-founded garden maintenance business in the Philippines, focusing on affordable, reliable, and eco-friendly gardening solutions. We cater to homes, schools, and small businesses looking to maintain green and healthy spaces.</p>
+    <p><strong>GardenCare Co.</strong> is a student-founded garden maintenance business in the Philippines, focusing on affordable, reliable, and eco-friendly gardening solutions. We serve homes, schools, and small businesses that want to keep their green spaces healthy and beautiful.</p>
 
     <h2>Vision, Mission, Goals, and Objectives (VMGO)</h2>
     <p><strong>Vision:</strong> To be the leading garden maintenance service that nurtures greener, cleaner, and healthier communities.</p>
-    <p><strong>Mission:</strong> Grow glow gaurdens. Inc , is committed to making home gardening easy, accessible. Through our passion for plants, we aim to inspire growth, wellness, and a deeper connection to nature </p>
-    <p><strong>Goals:</strong> to achive 500 houses </p>
+    <p><strong>Mission:</strong> GardenCare Co. is committed to making home gardening easy and accessible. Through our passion for plants, we aim to inspire growth, wellness, and a deeper connection to nature.</p>
+    <p><strong>Goals:</strong> To reach 500 homes and expand services to multiple communities.</p>
     <ul>
-      <li>Expand our services to multiple communities</li>
       <li>Promote eco-friendly gardening practices</li>
       <li>Support local plant growers and suppliers</li>
+      <li>Deliver reliable, high-quality service</li>
     </ul>
-    <p><strong>Objectives:</strong> Deliver consistent, reliable garden care while maintaining customer satisfaction above 95%.</p>
+    <p><strong>Objectives:</strong> Maintain a 95% or higher customer satisfaction rate while growing sustainably.</p>
 
     <h2>Organizational Chart</h2>
-    <p>Our simple structure ensures efficient teamwork:</p>
     <ul>
       <li><strong>CEO:</strong> Nathan</li>
       <li><strong>Operations Manager:</strong> Shannen</li>
-      <li><strong>Marketing & Finance/laborer:</strong> Jerry Lee</li>
-      <li><strong>Lead Gardener/laborer:</strong> Cliff</li>
+      <li><strong>Marketing & Finance / Laborer:</strong> Jerry Lee</li>
+      <li><strong>Lead Gardener / Laborer:</strong> Cliff</li>
     </ul>
 
     <h2>Duties and Responsibilities</h2>
     <ul>
-      <li><strong>CEO:</strong> Oversees all operations, manages client relationships, and plans growth strategies.</li>
-      <li><strong>Operations Manager:</strong> Manages day-to-day tasks, schedules, and quality control.</li>
-      <li><strong>Marketing & Finance:</strong> Handles promotion, budgeting, and financial tracking.</li>
-      <li><strong>Lead Gardener:</strong> Supervises gardening tasks and trains new team members.</li>
+      <li><strong>CEO:</strong> Oversees operations, manages client relationships, and plans company growth.</li>
+      <li><strong>Operations Manager:</strong> Handles schedules, staff coordination, and quality assurance.</li>
+      <li><strong>Marketing & Finance:</strong> Promotes the company, manages budgets, and ensures profitability.</li>
+      <li><strong>Lead Gardener:</strong> Supervises gardening work and trains new employees.</li>
     </ul>
 
+    <h2>Employee Benefits</h2>
+    <div class="benefits">
+      <div class="benefit-box">
+        <h3>🌱 Growth Opportunities</h3>
+        <p>Training and promotions for dedicated employees.</p>
+      </div>
+      <div class="benefit-box">
+        <h3>💰 Competitive Pay</h3>
+        <p>Fair salary rates with performance bonuses.</p>
+      </div>
+      <div class="benefit-box">
+        <h3>🎁 13th Month Pay</h3>
+        <p>Guaranteed 13th month pay for all full-time employees.</p>
+      </div>
+      <div class="benefit-box">
+        <h3>🏥 PhilHealth Coverage</h3>
+        <p>Medical assistance through the national health program.</p>
+      </div>
+      <div class="benefit-box">
+        <h3>🏡 Pag-IBIG Fund</h3>
+        <p>Housing and savings benefits for long-term employees.</p>
+      </div>
+      <div class="benefit-box">
+        <h3>👩‍👩‍👧 SSS Benefits</h3>
+        <p>Social security, maternity, and sickness benefits.</p>
+      </div>
+      <div class="benefit-box">
+        <h3>🕒 Flexible Hours</h3>
+        <p>Work schedules that fit school or personal life.</p>
+      </div>
+      <div class="benefit-box">
+        <h3>🌿 Free Gardening Supplies</h3>
+        <p>Tools, gloves, and safety gear provided by the company.</p>
+      </div>
+      <div class="benefit-box">
+        <h3>☕ Team Events & Wellness</h3>
+        <p>Regular team gatherings and outdoor wellness activities.</p>
+      </div>
+    </div>
+
     <h2>Meet the Team</h2>
-    <p>Nathan | Jerry Lee | Cliff | Shannen</p>
+    <p><strong>Nathan</strong> | <strong>Jerry Lee</strong> | <strong>Cliff</strong> | <strong>Shannen</strong></p>
 
     <a href="test.html" class="button">Back to Home</a>
   </div>
@@ -133,3 +244,4 @@
   </footer>
 </body>
 </html>
+
