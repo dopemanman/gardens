@@ -180,11 +180,294 @@
     <div class="popup-close">
       <button onclick="closePopup()">Close</button>
     </div>
+  </div<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Green Homes | Garden Maintenance</title>
+  <style>
+    /* GENERAL STYLES */
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('525551379_779981394588657_7951022009302298984_n.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #2e4600;
+    }
+
+    /* HEADER */
+    header {
+      background: rgba(76, 175, 80, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 1rem 2rem;
+      text-align: center;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      animation: slideDown 1.5s ease;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin: 0.3rem 0 0;
+      letter-spacing: 1px;
+    }
+
+    /* NAVIGATION */
+    nav {
+      background-color: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0.75rem;
+      border-bottom: 2px solid #a5d6a7;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #dcedc8;
+      text-shadow: 0 0 10px #ffffff;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      text-align: center;
+      padding: 8rem 2rem;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      animation: fadeIn 2s ease;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      animation: glow 3s infinite alternate;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta-button {
+      background-color: #4caf50;
+      padding: 0.8rem 1.8rem;
+      color: white;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #2e7d32;
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(76, 175, 80, 0.5);
+    }
+
+    /* SERVICES SECTION */
+    .services {
+      max-width: 1000px;
+      margin: 3rem auto;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .services h2 {
+      color: #3b6f0b;
+      margin-bottom: 1rem;
+    }
+
+    .service-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: #f1f8e9;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 2px solid #a5d6a7;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .card h3 {
+      color: #388e3c;
+      margin-bottom: 0.5rem;
+    }
+
+    /* POPUP STYLES */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      z-index: 2000;
+      max-width: 600px;
+      text-align: left;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .popup h3 {
+      color: #2e4600;
+      margin-top: 0;
+    }
+
+    .popup ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    .popup-close {
+      text-align: right;
+      margin-top: 1rem;
+    }
+
+    .popup-close button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .popup-close button:hover {
+      background-color: #388e3c;
+    }
+
+    /* FOOTER */
+    footer {
+      background: linear-gradient(90deg, #43a047, #2e7d32);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes glow {
+      from {text-shadow: 0 0 10px #81c784;}
+      to {text-shadow: 0 0 25px #c8e6c9;}
+    }
+
+    @keyframes slideDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+  <script>
+    function openPopup() {
+      document.getElementById("servicesPopup").style.display = "block";
+    }
+    function closePopup() {
+      document.getElementById("servicesPopup").style.display = "none";
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>Green Homes</h1>
+    <p>Professional Gardening & Maintenance Services</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="requirements.html">Job Requirements</a>
+  </nav>
+
+  <section class="hero" id="home">
+    <h1>Keep Your Garden Flourishing 🌿</h1>
+    <p>Affordable, eco-friendly garden care for every home</p>
+    <button class="cta-button" onclick="openPopup()">View Our Services</button>
+  </section>
+
+  <section class="services">
+    <h2>Why Choose Green Homes?</h2>
+    <div class="service-cards">
+      <div class="card">
+        <h3>🌻 Expert Care</h3>
+        <p>Our team is trained to handle every type of garden maintenance with precision.</p>
+      </div>
+      <div class="card">
+        <h3>🌳 Eco-Friendly</h3>
+        <p>We use natural fertilizers and sustainable methods to protect your plants and the planet.</p>
+      </div>
+      <div class="card">
+        <h3>💧 Reliable Service</h3>
+        <p>On-time, efficient, and always ready to keep your space green and clean.</p>
+      </div>
+      <div class="card">
+        <h3>🌼 Custom Plans</h3>
+        <p>Choose the schedule and care level that fits your garden’s needs best.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="popup" id="servicesPopup">
+    <h3>Our Gardening Services</h3>
+    <ul>
+      <li><strong>Lawn Care:</strong> Mowing, fertilizing, and aerating for a lush green lawn.</li>
+      <li><strong>Pruning:</strong> Trimming and shaping of shrubs and trees for healthy growth.</li>
+      <li><strong>Weeding:</strong> Removing unwanted plants for a clean, thriving garden.</li>
+      <li><strong>General Upkeep:</strong> Seasonal cleanups, mulching, and garden waste removal.</li>
+    </ul>
+    <div class="popup-close">
+      <button onclick="closePopup()">Close</button>
+    </div>
   </div>
 
   <footer>
-    <p>&copy; 2025 Green homes. All rights reserved.</p>
+    <p>&copy; 2025 Green Homes. All Rights Reserved. 🌱</p>
+    <p>Contact us: greenhomes.ph@gmail.com | +63 912 345 6789</p>
   </footer>
+
 </body>
 </html>
 
